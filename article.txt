@@ -1,0 +1,154 @@
+
+En este articulo vamos a explicar y realizar un proyecto demo utilizando ProGuard.
+
+ProGuard es un encapsulador, optimizador, ofuscador y preverificador de archivos Java.
+Detecta y elimina clases, campos, métodos y atributos no utilizados.
+Cambia el nombre de las clases, campos y métodos, utlizando nombres cortos y sin sentido; de este modo las aplicaciones son más livianas, más rápidas y mejora la seguridad con la ingeniería inversa.
+
+
+
+Para este tutorial, utilizaremos Retrofit 2 para consumir los web services, de este modo aprenderemos a ofuscar nuestro código con una librería externa
+
+
+API REST
+
+Utilizaremos un api rest de pokemon https://pokeapi.co/, para este tutorial sólo obtendremos un listado de pokemons
+http://pokeapi.co/api/v2/pokemon/
+
+La respuetsa del ws será:
+
+{
+  "count": 811,
+  "previous": null,
+  "results": [
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/1/",
+      "name": "bulbasaur"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/2/",
+      "name": "ivysaur"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/3/",
+      "name": "venusaur"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/4/",
+      "name": "charmander"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/5/",
+      "name": "charmeleon"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/6/",
+      "name": "charizard"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/7/",
+      "name": "squirtle"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/8/",
+      "name": "wartortle"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/9/",
+      "name": "blastoise"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/10/",
+      "name": "caterpie"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/11/",
+      "name": "metapod"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/12/",
+      "name": "butterfree"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/13/",
+      "name": "weedle"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/14/",
+      "name": "kakuna"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/15/",
+      "name": "beedrill"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/16/",
+      "name": "pidgey"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/17/",
+      "name": "pidgeotto"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/18/",
+      "name": "pidgeot"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/19/",
+      "name": "rattata"
+    },
+    {
+      "url": "http://pokeapi.co/api/v2/pokemon/20/",
+      "name": "raticate"
+    }
+  ],
+  "next": "http://pokeapi.co/api/v2/pokemon/?offset=20"
+}
+
+
+Creando el proyecto
+
+imagen
+
+Debemos agregar retrofit 2 en gradle
+
+imagen
+
+instalar plugin GsonFormat
+
+BuildConfig
+
+
+Creating Retrofit Instance
+
+Constant
+
+ApiInterface
+
+ApiManager
+
+PokemonListener
+
+ApiCallManager
+
+activity_main.xml
+
+item_pokemon
+
+PokemonAdapter
+
+MainActivity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
