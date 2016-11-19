@@ -13,6 +13,7 @@ import java.util.List;
 
 import info.androidhive.proguarddemo.R;
 import info.androidhive.proguarddemo.model.response.PokemonResponse;
+import info.androidhive.proguarddemo.util.Util;
 
 /**
  * Created by Ricardo Bravo on 18/11/16.
@@ -38,7 +39,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         PokemonResponse.ResultsEntity resultsEntity = resultsEntityList.get(position);
-        holder.lblDescription.setText(resultsEntity.getName());
+        holder.lblDescription.setText(Util.capitalize(resultsEntity.getName()));
     }
 
     @Override
@@ -65,7 +66,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
         public void onClick(View view) {
             if(view.getId() == R.id.cvPokemon){
                 Toast.makeText(context, context.getString(R.string.message_toast,
-                        resultsEntityList.get(getAdapterPosition()).getName()),
+                        Util.capitalize(resultsEntityList.get(getAdapterPosition()).getName())),
                         Toast.LENGTH_SHORT).show();
             }
         }
